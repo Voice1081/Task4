@@ -20,7 +20,6 @@ public class FileHashWebServer extends WebServer {
         this.filesList = files.toString();
     }
 
-    @Override
     protected String processCommand(String command) {
         if(command.equals("list")) return filesList;
         else if(command.startsWith("file")){
