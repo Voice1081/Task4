@@ -12,7 +12,7 @@ public class FileCommand implements ICommand {
     @Override
     public String getResult(String[] args) {
         if(args.length != 2 || !fileHashes.containsKey(args[1])) return "No such file in directory or incorrect command format";
-        else return fileHashes.get(args[1]) + "\r\n";
+        else return fileHashes.get(args[1]);
     }
 
     public FileCommand(){

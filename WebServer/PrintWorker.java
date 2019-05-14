@@ -1,7 +1,7 @@
 public class PrintWorker extends Threaded {
 
-    private final FileHashWebServer server;
-    public PrintWorker(FileHashWebServer server){
+    private final WebServer server;
+    public PrintWorker(WebServer server){
         this.server = server;
     }
     @Override

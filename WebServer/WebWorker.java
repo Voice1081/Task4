@@ -40,7 +40,7 @@ public class WebWorker extends Threaded {
                         input.append(inputLine);
                     }
                     if (quit) break;
-                    String result = processCommand(input.toString().trim());
+                    String result = processCommand(input.toString().trim()) + "\r\n";
                     input.setLength(0);
                     out.writeUTF(result);
                     out.writeUTF("end\r\n");
@@ -62,7 +62,7 @@ public class WebWorker extends Threaded {
 
     private String processCommand(String cmd){
         String[] splited = cmd.split(" ");
-        if(splited.length == 0 || !commands.containsKey(splited[0])) return "Incorrect command format";
+        if(splited.length == 0 || !commands.containsKey(splited[0].trim())) return "Incorrect command format";
         else return commands.get(splited[0]).getResult(splited);
     }
 }
